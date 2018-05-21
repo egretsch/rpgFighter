@@ -1,76 +1,154 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dragon Ball RPG Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-
-    <title>Hangman</title>
 </head>
-
 <body>
-    <div class="header">
-    <h1 id="h1">!!Hangman!!</h1>
-    <h1 class="h2">Super Hero Edition</h1>
-    </div>
-    
-    <div class="container mx-auto">
-        <div class="row">
-            <div class="col-sm-2 col-md-2">
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-center">Welcome to the Dragon Ball battle grounds. </h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">The universe is no longer safe and it is every Warrior for themselves. </p>
+                    <p> Select your Warrior and then select your first enemy to begin. Battle you opponent by clicking the 'attack'
+                        button. Choose wisely or it may be your last battle!</p>
+                    <p> Defeat all of Warrior and you and only you will be the last true Warrior. May the FORCE be with you!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary block-center" data-dismiss="modal">Prepare for Battle!</button>
+                </div>
             </div>
-            <!-- <div class="col-sm-4 col-md-4 border1">
-                <p class="text-center">Hint:</p>
-            </div> -->
-            <div class="col-sm-8 col-md-8 border1">
-                <p class="text-center">Press Any Key To Get Started!</p>
-                
-                <p class="text-center">Wins!!</p>
-                    <div>
-                        <p id="win-count" class="text-center"></p>
-                    </div>
-                <p class="text-center">Losses!!</p>
-                    <div>
-                        <p id="loss-count"  class="text-center"></p>
-                    </div>
-                <p class="text-center" >Current Word</p>
-                    <div >
-                        <p id="word-display-letters"class="text-center"></p>
-                    </div>
-                <p class="text-center">Number Of Guesses Remaning</p>
-                    <div>
-                        <p id="error-count" class="text-center"></p>
-                    </div>
-                <p class="text-center">Letters Already Guessed</p>
-                    <div>
-                        <p id="guessed-letters" class="text-center"></p>
-                    </div>
-            </div>        
-            <div class="col-sm-2 col-md-2">
-            </div>
-            
         </div>
     </div>
-    
+    <div id='wrap'>
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                        <h1> DRSAGON BALL RPG GAME!!</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid gameplaySection">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <h4> Select Your Warrior</h4>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div id="characterList">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <h4> Enemies To Attack</h4>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div id="enemyList">
+                            <p> Enemy list</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <h2> Battle Zone! </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+                    <h2> Your Warrior!</h2>
+                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                        <div id="yourCharacter">
 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+                    <button class="waves-effect waves-light btn-danger btn-lg attackBtn text-center" id="attackBtn"> Attack! </button>
 
+                </div>
+                <div class="col-sm-12 col-md-4 col-md-4 text-center">
+                    <h2> Your Opponent</h2>
+                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                        <div id="yourEnemy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-2 col-lg-2"></div>
+                <div class="col-sm-12 col-md-8 col-lg-8 text-center">
+                    <div id="attackText"> </div>
+                    <br>
+                    <div id="gameOver">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2"></div>
+            </div>
+        </div>
 
-
-    <script src="assets/javascript/game.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        <div id="push"> </div>
+    </div>
+    <div id="footer">
+    </div>
+    <script type="text/template" id="characterTmpl">
+		<div class="characterContainer characterClick <%= background %>" data-character-index="<%= index %>">
+			<p><%= character.name %></p>
+			<img src="<%= character.visual %>">
+			<p>HP: <%= character.healthPoints %></p>
+		</div>
+    </script>
+    <script type="text/template" id="attackTmpl">
+		<div class="attackText">
+			You attacked <%= gameObj.currentEnemy ? gameObj.currentEnemy.name : gameObj.lastOpponent.name %> for <%= gameObj.yourCurrentAttackPower %> damange! <br>
+			<% if (gameObj.currentEnemy) { %>
+				<%= gameObj.currentEnemy.name %> counter attacked damaging your health by <%= gameObj.currentEnemy.counterAttackPower %>.  
+			<% } %>
+		</div>
+    </script>
+    <script type="text/template" id="winTmpl">
+		<div class="attackText">
+			You have defeated <%= lastOpponent.name %> , choose another enemy to fight! 
+		</div>
+    </script>
+    <script type="text/template" id="lossTmpl">
+		<div class="attackText">
+			<%= gameObj.currentEnemy.name %>  has defeated you! Game Over!!
+		</div>
+    </script>
+    <script type="text/template" id="jediTmpl">
+        <div class="attackText">
+            You have defeated <%= lastOpponent.name %>!  You are now a true Saver of the Universe! 
+        </div>
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.backstretch(['assets/images/dbzbackground1.jpg', 'assets/images/dbzbackground2.jpg', 'assets/images/dbzbackground4.jpg', 'assets/images/dbzbackground5.jpg','assets/images/dbzbackground6.jpg',], {
+                duration: 10000,
+                fade: 900
+            });
+        });
+    </script>
 </body>
 
 </html>
