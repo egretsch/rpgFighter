@@ -1,128 +1,31 @@
-/* Google Fonts to choose fron: 
-font-family: 'Press Start 2P', cursive;
-font-family: 'Share Tech Mono', monospace;
-font-family: 'VT323', monospace;*/
 
 
-body {
-	font-family: 'Share Tech Mono', monospace;
-	color: white;
-
-
-}
-/*@font-face {
-	font-family: "STJEDISE";
-	src: url(star_jedi/stjedise/STJEDISE.TTF);
-}
-h1 {
-	font-family: STJEDISE;
-}*/
-.modal-body {
-	color: black;
+.text {
+  top: 2px;
+  
 }
 
-.modal-header {
-	color: black;
+.character{
+  background-color: coral;
+  border: solid 5px black;
+  padding: 5px 10px 20px 20px;
 }
 
-#wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -60px;
-
- }
-
-
- #push, #footer {
-    height: 60px;
+.imgDiv {
+  width: 150px;
 }
 
-
-/*Classes available*/
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.background{
+  background-image: url("../images/dbzb.jpg");
 }
-
-
-.characterContainer {
-	display: inline-block;
-	width: 200px;
-	border: solid 4px black;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	border-radius: 7px;
-	
-}
-
-.bg-red {
-	background-color: #ce2121;
-
-	
-}
-
-.bg-white {
-	background-color: white;
-
-}
-
-.bg-black {
-	background-color: grey;
-
-}
-
-.enemyContainer {
-	display: inline-block;
-	/*height: 200px;*/
-	width: 200px;
-	border: solid 4px black;
-	margin-bottom: 10px;
-	background-color: black;
-	border-radius: 7px;
-}
-
-
-.characterContainer p, .enemyContainer p {
-	color: black;
-	text-align: center;
-
-}
-
-img {
-	height: 100px;
-	width: 150px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.attackBtn {
-	vertical-align: middle;
-	margin-top: 80px;
-	
-}
-
-#attackText {
-	font-size: 25px;
-}
-
-#characterList {
-
-}
-
-#enemyList {
-
-}
-
-#yourCharacter {
-
-
+/* #yourCharacter {
+  background-color: coral;
+  border: solid 5px black;
+  padding: 5px 10px 20px 20px;
 }
 
 #yourEnemy {
-
-}
-
+  background-color: coral;
+  border: solid 5px black;
+  padding: 5px 10px 20px 20px;
+} */
