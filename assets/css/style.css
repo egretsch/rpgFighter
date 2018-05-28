@@ -6,9 +6,10 @@
 }
 
 .character{
+  width: 200px;
   background-color: coral;
   border: solid 5px black;
-  padding: 5px 10px 20px 20px;
+  padding: 5px 20px 20px 20px;
 }
 
 .imgDiv {
@@ -18,14 +19,7 @@
 .background{
   background-image: url("../images/dbzb.jpg");
 }
-/* #yourCharacter {
-  background-color: coral;
-  border: solid 5px black;
-  padding: 5px 10px 20px 20px;
+h3 {
+  color: purple;
+  background-color: yellowgreen;
 }
-
-#yourEnemy {
-  background-color: coral;
-  border: solid 5px black;
-  padding: 5px 10px 20px 20px;
-} */
