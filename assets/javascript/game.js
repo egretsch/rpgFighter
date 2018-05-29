@@ -3,7 +3,7 @@ var addDamage = 10;
 var Warrior = null;
 var Enemy = null;
 var graveyard = [];
-// ist of charascters
+// list of charascters
 var characters = {
     "Frieza": {
         visual: 'assets/images/Frieza.jpg',
@@ -36,7 +36,8 @@ var characters = {
         counterAttackPower: 20,
     }
 };
-Object.size = function(obj) {
+
+Object.size = function (obj) {
     var size = 0, key;
     for (key in obj) {
         if (obj.hasOwnProperty(key)) size++;
@@ -47,7 +48,7 @@ Object.size = function(obj) {
 function resetGame(message) {
     var prompt = confirm(message);
 
-    if(prompt == true) {
+    if (prompt == true) {
         location.reload();
     }
     else {
@@ -72,7 +73,7 @@ function buildcharacterDiv(characters, character) {
             "class": "col-md-2 character"
         }
     )
-// cteartas charaters div
+    // cteartas charaters div
     var characterImgDiv = $("<img>");
     var characterHpName = $("<div>");
     characterImgDiv.attr(
@@ -91,7 +92,7 @@ function characterPrint() {
     for (character in characters) {
         if (Warrior !== character && Enemy !== character && !graveyard.includes(character)) {
             var characterDiv = buildcharacterDiv(characters, character);
-            $("#characterStart").append(characterDiv);    
+            $("#characterStart").append(characterDiv);
         };
     };
 };
@@ -118,7 +119,7 @@ function attackDamageIncrease(character) {
     characters[character].attackPower = characters[character].attackPower + addDamage;
 };
 // lower hp
-function lowerHp (character, damage) {
+function lowerHp(character, damage) {
     characters[character].healthPoints = characters[character].healthPoints - damage;
 };
 // drfines status as warrior
@@ -132,14 +133,14 @@ function queueEnemy(character) {
     updateDisplay();
 };
 // dfines charaicter location no page on click
-$("#characterStart").on("click", ".character", function(){
+$("#characterStart").on("click", ".character", function () {
     var character = $(this).attr('data-name');
-        if (Warrior === null) {
-            queueWarrior(character);
-        }
-        else if (Enemy === null) {
-            queueEnemy(character);
-        }
+    if (Warrior === null) {
+        queueWarrior(character);
+    }
+    else if (Enemy === null) {
+        queueEnemy(character);
+    }
 });
 // primery game logic contoler
 $("#atack").on("click", function () {
@@ -148,26 +149,30 @@ $("#atack").on("click", function () {
     if (warrior && enemy) {
         attackDamageIncrease(warrior);
         lowerHp(enemy, characters[warrior].attackPower);
-        if(characters[enemy].healthPoints <= 0) {
+        
+        if (characters[enemy].healthPoints <= 0) {
             graveyard.push(enemy);
             Enemy = null;
             if (graveyard.length >= Object.size(characters) - 1) {
                 resetGame(" !!!You saved the universe!!! ");
             };
         };
-        if(Enemy !== null) {
+        
+        if (Enemy !== null) {
             lowerHp(warrior, characters[enemy].counterAttackPower);
             if (characters[warrior].healthPoints <= 0) {
                 resetGame(" !!!You could not save the universe!!! ")
             }
         };
-        // if (!Win) {
-        //     updateDisplay();
-        // };
+        
+        updateDisplay();
+        
     };
 })
+
+
 // update display
-function updateDisplay(){
+function updateDisplay() {
     clearDisplay();
     characterPrint();
     warriorPrint();
