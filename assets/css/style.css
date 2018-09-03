@@ -4,22 +4,22 @@
   top: 2px;
   
 }
-// Character cell overall design
+
 .character {
   width: 200px;
   background-color: coral;
   border: solid 5px black;
   padding: 5px 20px 20px 20px;
 }
-// Image div size
+
 .imgDiv {
   width: 150px;
 }
-// Background image
+
 .background {
   background-image: url("../images/dbzb.jpg");
 }
-// Title of page styling
+
 h3 {
   color: purple;
   background-color: yellowgreen;
