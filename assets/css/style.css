@@ -11,11 +11,11 @@
   border: solid 5px black;
   padding: 5px 20px 20px 20px;
 }
-// Gives sizing to image div
+// Gives sizing to photo
 .imgDiv {
   width: 150px;
 }
-// Gives the background image
+// Gives the background 
 body {
   background-image: url("../images/dbzb.jpg");
 }
