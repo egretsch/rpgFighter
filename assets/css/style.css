@@ -4,22 +4,22 @@
   top: 2px;
   
 }
-
+// Gives styling to character
 .character {
   width: 200px;
   background-color: coral;
   border: solid 5px black;
   padding: 5px 20px 20px 20px;
 }
-
+// Gives sizing to image div
 .imgDiv {
   width: 150px;
 }
-
-.background {
+// Gives the background image
+body {
   background-image: url("../images/dbzb.jpg");
 }
-
+// Gives styling to words
 h3 {
   color: purple;
   background-color: yellowgreen;
