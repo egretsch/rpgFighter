@@ -16,7 +16,7 @@
   width: 150px;
 }
 // Gives the background 
-body {
+.background {
   background-image: url("../images/dbzb.jpg");
 }
 // Gives styling to words
