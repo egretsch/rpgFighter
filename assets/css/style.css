@@ -5,7 +5,7 @@
   
 }
 //Character cell overall design
-.character{
+.character {
   width: 200px;
   background-color: coral;
   border: solid 5px black;
@@ -16,7 +16,7 @@
   width: 150px;
 }
 //Background image
-.background{
+body {
   background-image: url("../images/dbzb.jpg");
 }
 //Title of page styling
