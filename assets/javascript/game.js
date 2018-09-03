@@ -3,7 +3,7 @@ var addDamage = 10;
 var Warrior = null;
 var Enemy = null;
 var graveyard = [];
-// list of charascters
+// List of characters
 var characters = {
     "Frieza": {
         visual: 'assets/images/Frieza.jpg',
@@ -44,7 +44,7 @@ Object.size = function (obj) {
     }
     return size;
 };
-// resets charaaters
+// Resets characters
 function resetGame(message) {
     var prompt = confirm(message);
 
@@ -55,16 +55,16 @@ function resetGame(message) {
         location.reload();
     };
 };
-// clears display of chaertesa
+// Clears display of character
 function clearDisplay() {
     $("#characterStart").html("");
     $("#yourCharacter").html("");
     $("#yourEnemy").html("");
 };
-// builds virw of charaater
+// Builds characters on page
 function buildcharacterDiv(characters, character) {
     var characterDiv = $("<div>");
-    // setup div to display
+    // Setup div to display
     characterDiv.attr(
         {
             "data-hp": characters[character].healthPoints,
@@ -73,7 +73,7 @@ function buildcharacterDiv(characters, character) {
             "class": "col-md-2 character"
         }
     )
-    // cteartas charaters div
+    // Creates characters div
     var characterImgDiv = $("<img>");
     var characterHpName = $("<div>");
     characterImgDiv.attr(
@@ -87,7 +87,7 @@ function buildcharacterDiv(characters, character) {
     characterDiv.append(characterImgDiv);
     return characterDiv;
 };
-// puts char of charaecter onpage
+// Puts character on page
 function characterPrint() {
     for (character in characters) {
         if (Warrior !== character && Enemy !== character && !graveyard.includes(character)) {
@@ -96,7 +96,7 @@ function characterPrint() {
         };
     };
 };
-// charaicter pirnt warrior
+// Prints character warrior
 function warriorPrint() {
     for (character in characters) {
         if (Warrior === character) {
@@ -105,7 +105,7 @@ function warriorPrint() {
         };
     };
 };
-// pirnts as enemy
+// Print enemy
 function enemyPrint() {
     for (character in characters) {
         if (Enemy === character) {
@@ -114,25 +114,25 @@ function enemyPrint() {
         };
     };
 };
-// increase warrior dameage
+// Increase warrior dameage
 function attackDamageIncrease(character) {
     characters[character].attackPower = characters[character].attackPower + addDamage;
 };
-// lower hp
+// Lower hp
 function lowerHp(character, damage) {
     characters[character].healthPoints = characters[character].healthPoints - damage;
 };
-// drfines status as warrior
+// Drfines status as warrior
 function queueWarrior(character) {
     Warrior = character;
     updateDisplay();
 };
-// drfines status as enemy
+// Defines status as enemy
 function queueEnemy(character) {
     Enemy = character;
     updateDisplay();
 };
-// dfines charaicter location no page on click
+// Defines character location no page on click
 $("#characterStart").on("click", ".character", function () {
     var character = $(this).attr('data-name');
     if (Warrior === null) {
@@ -142,7 +142,7 @@ $("#characterStart").on("click", ".character", function () {
         queueEnemy(character);
     }
 });
-// primery game logic contoler
+// Primary game logic controller
 $("#atack").on("click", function () {
     var warrior = $("#yourCharacter div").attr("data-name");
     var enemy = $("#yourEnemy div").attr("data-name");
