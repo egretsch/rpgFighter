@@ -1,5 +1,5 @@
 
-# unit-4-game
+# rpgFighter
 Link: https://egretsch.github.io/rpgFighter/
 
 ## Purpose
